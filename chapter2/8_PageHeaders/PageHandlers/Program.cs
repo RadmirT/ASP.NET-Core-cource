@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using PageHandlers.ServicesLayer.Search;
 
-namespace WebApplication1
+namespace PageHandlers
 {
     public class Program
     {
@@ -7,25 +10,17 @@ namespace WebApplication1
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddRazorPages();
-
+            builder.Services.AddSingleton<ISearchService, SearchService>();
             var app = builder.Build();
-            if (!app.Environment.IsDevelopment())
-            {
 
-                app.UseExceptionHandler("/Error");
-            }
-            else
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            app.UseStatusCodePagesWithReExecute("/{0}");
-            app.UseStaticFiles();
             app.UseRouting();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
             });
             app.Run();
+
         }
     }
 }
