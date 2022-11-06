@@ -1,0 +1,9 @@
+﻿@page "/product/{category}/{name=all}/{id:int?}"
+@model RoutingExample.Pages.ProductsModel
+@{
+    ViewData["Title"] = "Products";
+}
+<p>Id: <b>@Model.Id</b></p>
+<p>Category: <b>@Model.Category</b></p>
+<p>Name: <b>@Model.Name</b></p>
+

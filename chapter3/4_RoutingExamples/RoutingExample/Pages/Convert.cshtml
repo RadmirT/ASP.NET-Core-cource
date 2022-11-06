@@ -1,0 +1,8 @@
+﻿@page "/{currency}/convert/{**other}"
+@model RoutingExample.Pages.ConvertModel
+@{
+    ViewData["Title"] = "Covvert";
+}
+<p>Currency: <b>@Model.Currency</b></p>
+<p>Other: <b>@Model.Other</b></p>
+
