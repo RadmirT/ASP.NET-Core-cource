@@ -1,0 +1,25 @@
+﻿@page
+@model SimpleBindings.Pages.CheckoutModel
+@{
+    <form method="post">
+        <div class="form-group">
+
+            <label asp-for="User.FirstName"></label>
+            <input class="form-control" asp-for="User.FirstName" />
+        </div>
+        <div class="form-group">
+            <label asp-for="User.LastName"></label>
+            <input class="form-control" asp-for="User.LastName" />
+        </div>
+        <div class="form-group">
+            <label asp-for="User.Email"></label>
+            <input class="form-control" asp-for="User.Email" />
+        </div>
+        <div class="form-group">
+            <label asp-for="User.PhoneNumber"></label>
+            <input class="form-control" asp-for="User.PhoneNumber" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+}
