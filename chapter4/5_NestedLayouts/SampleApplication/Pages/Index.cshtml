@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    Layout = "_TwoColumn";
+    ViewData["Title"] = "Home Page";
+}
+
+@section Sidebar {   
+    @*Все содержимое в фигурных скобках является частью секции Sidebar, а не основного содержимого *@
+    <p>This is the sidebar content</p>
+}
+
+@*Любое содержимое, не входящее в @section, будет обработано вызовом @RenderBody *@
+<p>This is the main content </p>
