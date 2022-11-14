@@ -1,4 +1,6 @@
-﻿namespace SampleApplication.ServicesLayer
+﻿using RazorPageFormLayout;
+
+namespace SampleApplication.ServicesLayer
 {
 
     public class ProductService
