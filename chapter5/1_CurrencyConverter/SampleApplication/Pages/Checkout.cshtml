@@ -1,0 +1,35 @@
+﻿@page
+@model SampleApplication.Pages.CheckoutModel  
+@*CheckoutModel - это PageModel, которая предоставляет UserBindingModel для свойства Input *@
+@{
+    ViewData["Title"] = "Checkout";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form method="post" asp-page="Checkout"> @*Тег-хелперы form используют маршрутизацию для определения URL-адреса, на который будет отправлено содержимое формы*@
+    <div class="form-group">
+        <label asp-for="Input.FirstName"></label> @*Тег-хелпер label использует DataAnnotations в свойстве, чтобы определить заголовок для визуализации*@
+        <input class="form-control" asp-for="Input.FirstName" /> @*Тег-хелпер input использует DataAnnotations для определения типа ввода для генерации*@
+        <span asp-validation-for="Input.FirstName" class="text-danger"></span> @*Тег-хелпер validation отображает сообщения об ошибках, ассоциированные с данным свойством*@
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.LastName"></label>
+        <input class="form-control" asp-for="Input.LastName" />
+        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Email"></label>
+        <input class="form-control" asp-for="Input.Email" />
+        <span asp-validation-for="Input.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.PhoneNumber"></label>
+        <input class="form-control" asp-for="Input.PhoneNumber" />
+        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
