@@ -1,0 +1,12 @@
+﻿@page
+@model ECommerce.Pages.Products.IndexModel
+@{
+}
+<ul>
+    @foreach (var product in Model.Products)
+    {
+        <li><a asp-area="" asp-page="/Products/ProductDetail" asp-route-id="@product.Id">@product.Name</a></li>
+    }
+</ul>
+<a asp-page="/Products/AddProduct">Add new product</a>
+

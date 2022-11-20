@@ -1,0 +1,12 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<a asp-page="RowCount/Transient" class="btn btn-primary">Transient services</a>
+<a asp-page="RowCount/Scoped" class="btn btn-primary">Scoped services</a>
+<a asp-page="RowCount/Singleton" class="btn btn-primary">Singleton services</a>
+
+
+<a asp-page="RowCount/Captured" class="btn btn-primary">Singleton repository and scoped data context</a>

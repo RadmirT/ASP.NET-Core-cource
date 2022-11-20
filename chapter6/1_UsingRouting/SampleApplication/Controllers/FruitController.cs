@@ -6,27 +6,27 @@ namespace SampleApplication.Controllers
     public class FruitController : ControllerBase
     {
         private readonly List<string> _fruit = new List<string>
-            {
-                "Pear",
-                "Lemon",
-                "Peach"
-            };
+        {
+            "Pear",
+            "Lemon",
+            "Peach"
+        };
 
-        [HttpGet("fruit")]
+        [HttpGet("fruits")]
         public IEnumerable<string> Index()
         {
-            return this._fruit;
+            return _fruit;
         }
 
-        [HttpGet("fruit/{id}")]
+        [HttpGet("fruits/{id}")]
         public ActionResult<string> View(int id)
         {
-            if (id >= 0 && id < this._fruit.Count)
+            if (id >= 0 && id < _fruit.Count)
             {
-                return this._fruit[id];
+                return _fruit[id];
             }
 
-            return this.NotFound();
+            return NotFound();
         }
     }
 }
