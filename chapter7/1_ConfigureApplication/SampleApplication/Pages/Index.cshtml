@@ -1,0 +1,22 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = Model.AppSettings.AppTitle;
+}
+
+<h3>@ViewData["Title"]</h3>
+
+@if (Model.AppSettings.ShowCopyright)
+{
+    <p>Mine! Hands off! ;)</p>
+}
+
+<ul>
+    @foreach (var store in Model.Stores)
+    {
+        <li data-lat="@store.Location.Latitude" data-long="@store.Location.Longitude" class="stores">
+            @store.Name (@store.Location.Latitude, @store.Location.Longitude)
+        </li>
+    }
+</ul>
+
