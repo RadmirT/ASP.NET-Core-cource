@@ -1,0 +1,9 @@
+﻿@page "/Products/{id}/Edit"
+@model ECommerce.Pages.Products.EditProductModel
+@{
+}
+<form method="post">
+    <partial name="ProductEditor" model="Model.Input" />
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

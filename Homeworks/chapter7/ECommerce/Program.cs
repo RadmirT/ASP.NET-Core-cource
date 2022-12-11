@@ -26,16 +26,3 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
-
-class Order
-{
-    public int CustomerId  { get; set; }
-    public int[] Prorducts { get; set; }
-
-    public string DeliveryAddress { get; set; }
-}
-
-interface IOrdersService
-{
-    void PlaseOrder(Order order);
-}
